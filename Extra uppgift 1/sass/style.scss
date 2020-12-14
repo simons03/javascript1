@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      border: 1px solid #ddd;
+      margin-top: -1px; /* Prevent double borders */
+      background-color: #f6f6f6;
+      padding: 12px;
+
+
+    }
+  }
+  
+
+
+
+  .active { 
+    color: green;
+    font-weight: bold;
+  }
+
+  .unactive {
+    color: grey;
+    font-weight: bold;
+
+  }
