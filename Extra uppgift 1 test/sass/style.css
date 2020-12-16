@@ -1,0 +1,55 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+}
+
+.container #skicka {
+  position: absolute;
+  right: 1rem;
+  top: 2.7rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.unactive {
+  color: grey;
+  font-weight: bold;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    position: relative;
+  }
+  .container #skicka {
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
