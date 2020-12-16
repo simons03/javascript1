@@ -4,6 +4,20 @@
     padding: 0;
 }
 
+.container {
+  position: relative;
+
+   
+    #skicka {
+      position: absolute;
+      right: 1rem;
+      top: 2.7rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
+
+    }
+}
+
 
 
 ul {
@@ -21,9 +35,6 @@ ul {
     }
   }
   
-
-
-
   .active { 
     color: green;
     font-weight: bold;
@@ -33,4 +44,20 @@ ul {
     color: grey;
     font-weight: bold;
 
+  }
+
+  @media (min-width: 1000px) {
+    .container {
+      position: relative;
+        #skicka {
+          position: absolute;
+          right: 1rem;
+          top: 0;
+          padding-left: 3rem;
+          padding-right: 3rem;
+    
+        }
+    }
+    
+    
   }

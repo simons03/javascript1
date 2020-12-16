@@ -2,80 +2,95 @@
 
 
 let users = [
-    { firstName: "Simon", lastName: "Söderberg", active: true},
-    { firstName: "Hans", lastName: "Olsson", active: false},
-    { firstName: "Johan", lastName: "Svensson", active: false},
-    { firstName: "Oscar", lastName: "Nilsson", active: true},
-    { firstName: "Nils", lastName: "Andersson", active: true},
-    { firstName: "Anna", lastName: "Berg", active: false},
-    { firstName: "Sofia", lastName: "Ludvigsson", active: true},
-    { firstName: "Julia", lastName: "Ibrahim", active: false},
-    { firstName: "Jenifer", lastName: "Mohammed", active: true},
-    { firstName: "Oscar", lastName: "Svensson", active: true}
+    { firstName: "Simon", lastName: "Söderberg", status: true},
+    { firstName: "Hans", lastName: "Olsson", status: false},
+    { firstName: "Johan", lastName: "Svensson", status: false},
+    { firstName: "Oscar", lastName: "Nilsson", status: true},
+    { firstName: "Nils", lastName: "Andersson", status: true},
+    { firstName: "Anna", lastName: "Berg", status: false},
+    { firstName: "Sofia", lastName: "Ludvigsson", status: true},
+    { firstName: "Julia", lastName: "Ibrahim", status: false},
+    { firstName: "Jenifer", lastName: "Mohammed", status: true},
+    { firstName: "Oscar", lastName: "Svensson", status: true},
 ]
 
 //lägger till person i array
-// users.push({ firstName: "Nils", lastName: "Holgesson", active: true});
-
-
-
+// users.push({ firstName: "Nils", lastName: "Holgesson", status: true});
 
 //listan startar
 let list = '<ul>'
-
 //loopar ut listan
 users.forEach(function(user) {
 
-    if (user.active == true) {
+    if (user.status == true) {
         list += '<li class="active">' + user.firstName + " " + user.lastName + '</li>';
     }
-    else if (user.active == false){
+    else if (user.status == false){
         list += '<li class="unactive">' + user.firstName + " " + user.lastName +  '</li>';
     }
 });
-
-
 //listan tar slut
 list += '</ul>';
-
 //skriver ut listan i diven med id personer
 document.getElementById("personer").innerHTML = list;
 
+// klart detta över ska va kvar
 
 
 
 
 
-/* Funktioner */
 
-//ska lägga till user
-function adduser() {
-    users.push ({
-        firstName: "Nils", lastName: "Holgesson", active: true
 
-        // firstName: document.getElementById("firstname").Value, 
-        // lastName: document.getElementById("lastname").Value,    
-        // active: document.getElementById("active").value,
-        // active: document.getElementById("unavtive").value
-    })
-    //skapar listan
+
+
+
+
+// let user = {firstName: username, lastName: userlastname}
+// console.log(user)
+
+//fungerar lägger till objekt i arrayen
+function pushData() {
+
+    let firstname = document.getElementById("firstname").value;
+    let lastname = document.getElementById('lastname').value;
+    let active = document.getElementById('active').checked;
+
+    if (status.checked == true) {
+        return status == true
+    }
+
+    //skapar ett objekt
+    let user = {
+        firstName: firstname, 
+        lastName: lastname,
+        status: active
+    }
+    console.log(user)
+    //trycker upp objektet i arrayen
+    users.push(user)
+    console.log(users)
+
     list = '<ul>'
     users.forEach(function(user) {
-        if (user.active == true) {
+        if (user.status == true) {
             list += '<li class="active">' + user.firstName + " " + user.lastName + '</li>';
         }
-        else if (user.active == false){
+        else if (user.status == false){
             list += '<li class="unactive">' + user.firstName + " " + user.lastName +  '</li>';
         }
+        // else 
+        // list += '<li class="unactive">' + user.firstName + " " + user.lastName +  '</li>';
+
     });
     //stänger listan
     list += '</ul>';
     //skriver ut listan i diven med id personer
     document.getElementById("personer").innerHTML = list;
 
-
-    console.log(users)
 }
+
+
 
 
 //tar bort objekt ur arrayen
@@ -85,10 +100,10 @@ function removeuser() {
     list = '<ul>'
     users.forEach(function(user) {
 
-        if (user.active == true) {
+        if (user.status == true) {
             list += '<li class="active">' + user.firstName + " " + user.lastName + '</li>';
         }
-        else if (user.active == false){
+        else if (user.status == false){
             list += '<li class="unactive">' + user.firstName + " " + user.lastName +  '</li>';
         }
     });
